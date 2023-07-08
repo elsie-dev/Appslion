@@ -1,5 +1,5 @@
-
 FROM python:3.8-slim-buster
+LABEL org.opencontainers.image.source="https://github.com/elsie-dev/Appslion"
 
 WORKDIR /python-docker
 
