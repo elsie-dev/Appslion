@@ -5,11 +5,13 @@ env:
   DOTNET_VERSION: '6.0.x'
 
 on:
-  push:
+  schedule:
+   - cron: '0 19 * * 6 Europe/Paris'
+  workflow_run:
+    workflows: ["Periodic CI"]
     branches:
       - main
-  workflow_dispatch:
-
+ 
 jobs:
       push-store-image:
         runs-on: ubuntu-latest
