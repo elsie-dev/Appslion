@@ -5,8 +5,8 @@ env:
   DOTNET_VERSION: '6.0.x'
 
 on:
-  schedule:
-   - cron: '0 19 * * 6' 
+#   schedule:
+#    - cron: '0 19 * * 6' 
   workflow_run:
     workflows: ["Periodic CI"]
     branches:
