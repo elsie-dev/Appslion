@@ -6,7 +6,7 @@ env:
 
 on:
   schedule:
-   - cron: '0 19 * * 6 Europe/Paris'
+   - cron: '0 19 * * 6'
   workflow_run:
     workflows: ["Periodic CI"]
     branches:
