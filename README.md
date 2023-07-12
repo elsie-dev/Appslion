@@ -30,19 +30,21 @@ The Ci runs on push to main branch peridically on Saturday at 7pm
  - Creating ansible_hosts and replacing with the ip address to your instance
  - Creating a playbook file with your instruction
 
-   To test your ssh connection run the command:
+To test your ssh connection run the command:
 
-   ```
+  ```
    ansible hosts_to_add_key -m ping -i ansible_hosts
-   ```
+  ```
   ```
     ansible hosts_to_add_key -m ping -i ansible_hosts
     --user ubuntu --key-file ~/path to your ec2 key.pem
   ```
+If you specify the right path and have the right permission expect to see success output as shown below before running your playbook.
+![Ansible](/screenshot/Capture.JPG)
 
 To run your playbook use the command:
 ```
-ansible-playbook add-key.yml -i ansible_hosts --user ubuntu --key-file ~/keys/popo.pem -e "key=~/.ssh/id_rsa.pub"
+ansible-playbook add-key.yml -i ansible_hosts -user ubuntu --key-file ~/keys/popo.pem -e "key=~/.ssh/id_rsa.pub"
 ```
 
 
