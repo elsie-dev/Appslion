@@ -57,3 +57,5 @@ ansible-playbook add-key.yml -i ansible_hosts -user ubuntu --key-file ~/keys/pop
 [Installing Terraform](https://developer.hashicorp.com/terraform/downloads?ajs_aid=8edebcc0-620e-4d81-9f0e-029fa8433d7b&product_intent=terraform)
 
 [Ansible](https://www.middlewareinventory.com/blog/ansible-ec2-ssh-key/#Steps_to_Add_SSH_Key_to_EC2_Instances)
+
+Side Note: I understand as a DevOps best practice Infrastructure as Cod/Configuration setup should be in a different Repo with the application repo, but instead included them together for other reasons
