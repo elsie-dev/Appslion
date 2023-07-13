@@ -34,9 +34,12 @@ configuration?**
 - **Describe your approach for deployment**
   
   Understanding what the application is about and what it is supposed to achieve.
+  
   Using GitHub for version control, setting up a new repo fo the applications and CI on the develop branch
+  
   Setting up a different repo for Infrastructure, for this case using Terraform in AWS. To set up the AWS resources
   (blablabla)
+  
   Configuring monitoring and security using .....
  
 
