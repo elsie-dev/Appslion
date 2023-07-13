@@ -5,33 +5,37 @@ consider the following points as a guide for the description of how you would ap
 
 ### Environmental SetUp:
 
--  **Would you use a support tool like linter? If so why?**
+####  **Would you use a support tool like linter? If so why?**
   
    I would use modern-day linters since right now it's not only about achieving clean code but also
    implementing  and detecting security vulnerabilities, memory leaks, and code compliance in the dev environment.
-   They are also useful in catching bugs before they are pushed to production and giving instant feedback, so the same mistake can't be made in the future.
+   They are also useful in catching bugs before they are pushed to production and giving instant feedback, so the same mistake can't be 
+   made in the future.
    
-- **How would you proceed with changes if suddenly you want to add another
-  application (which has to be configured in a similar way to the previous one) and
-potentially other resources?**
+#### How would you proceed with changes if suddenly you want to add another application (which has to be configured in a similar way to 
+  the previous one) and potentially other resources?
+  
+  Since l used Terraform to set up my infrastructure, this approach is easier when adding other applications.
+    Terraform has a tfvars which makes it simple to manage the variables and one can easily change resources to what they need.
 
-Since l used Terraform to set up my infrastructure, this approach is easier when adding other applications.
-Terraform has a tfvars which makes it simple to manage the variables and one can easily change resources to what they need.
+#### **Is the environment immutable?**
 
-- **Is the environment immutable?**
- Since my stateless application, use microservices. They are immutable by nature, changes can't be made after deployment.
- This prevents inconsistent environments and simplified debugging. Since we used Ansible for configuration management, it means there's increased secuirty ad SSH can be disabled from on reduce
-the attack vector, improving the organization's security posture.
+   Since my stateless application, use microservices. They are immutable by nature, changes can't be made after deployment.
+   This prevents inconsistent environments and simplified debugging. Since we used Ansible for configuration management, it means there are 
+   increased security ad SSH can be disabled to reduce the attack vector, improving the organization's security posture.
 
--  **How would you organize the artifacts that you generate with the deployment and
-configuration?**
+####  How would you organize the artifacts that you generate with the deployment and configuration? 
 
-1. Container images - place them in a private container registry, AWS ECR
-2. CI Process - environment keys used in GitHub action workflow stored in the secrets
-  configuring Git Guardian to get notified if any credential gets exposed to Github
-3. Infarstructure as Code tfstate files being placed in.gitninoe file
+- Container images - place them in a private container registry, AWS ECR
+       
+- CI Process - environment keys used in GitHub action workflow stored in the secrets
+      configuring Git Guardian to get notified if any credential gets exposed to Github
 
-- **Describe your approach for deployment**
+- Infrastructure as Code tfstate files being placed in.git ignore file
+       
+- Monitoring - Using an APM like Kibana for the log analytics, which can then alert if there is a problem.
+
+#### **Describe your approach for deployment**
   
   Understanding what the application is about and what it is supposed to achieve.
   
