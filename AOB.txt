@@ -1,0 +1,16 @@
+python3 -m venv venv
+source venv/bin/activate
+
+
+testing ssh connection
+ ansible hosts_to_add_key -m ping -i ansible_hosts
+
+ ansible hosts_to_add_key -m ping -i ansible_hosts
+  --user ubuntu --key-file ~/keys/popo.pem
+.........................................
+
+cd ~/.ssh
+cat id_rsa.pub
+
+cd ~/keys
+ansible-playbook add-key.yml -i ansible_hosts -user ubuntu --key-file ~/keys/popo.pem -e "key=~/.ssh/id_rsa.pub"
